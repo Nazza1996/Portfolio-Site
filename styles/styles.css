@@ -17,12 +17,33 @@
     margin: 0px 0px 20px 0px;
 }
 
-.intro-image {
+.intro-image-big {
     margin: auto 0;
 }
 
-.avatar {
+.intro-image-big .avatar {
     width: 150px;
     height: 150px;
     border-radius: 20px;
+}
+
+.intro-image-small {
+    display: none;
+}
+
+.intro-image-small .avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+}
+
+@media (max-width: 650px) {
+    .intro-image-big {
+        display: none;
+    }
+
+    .intro-image-small {
+        display: block;
+        margin: auto 0;
+    }
 }
