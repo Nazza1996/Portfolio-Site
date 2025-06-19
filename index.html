@@ -100,31 +100,14 @@
             const footer = document.querySelector('footer');
 
             hamburgerButton.addEventListener('click', () => {
-                if (hamburgerMenu.style.display === 'none') {
-                    document.querySelectorAll('section').forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    footer.style.display = 'none';
-                    hamburgerMenu.style.display = '';
-                } else {
-                    document.querySelectorAll('section').forEach(section => {
-                        section.style.display = '';
-                    });
-                    footer.style.display = '';
-                    hamburgerMenu.style.display = 'none';
-                }
+                hamburgerMenu.style.display = hamburgerMenu.style.display === 'block' ? 'none' : 'block';
             });
 
             document.querySelectorAll('.hamburger-link').forEach(link => {
                 link.addEventListener('click', () => {
-                    document.querySelectorAll('section').forEach(section => {
-                        section.style.display = '';
-                    });
-                    footer.style.display = '';
                     hamburgerMenu.style.display = 'none';
                 });
             });
-            
         </script>
 
     </body>
