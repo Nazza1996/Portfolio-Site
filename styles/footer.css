@@ -1,0 +1,17 @@
+footer {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+.footer-links img {
+    width: 30px;
+    height: 30px;
+}
