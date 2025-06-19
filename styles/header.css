@@ -1,0 +1,45 @@
+header {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.header-content, .header-content a {
+    text-decoration: none;
+    color: #F2F2F2
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li, .nav-links li a {
+    list-style: none;
+    text-decoration: none;
+    color: #F2F2F2
+}
+
+@media (max-width: 600px) {
+    #homeButton {
+        display: none;
+    }
+}
+
+.nav-links > #hamburger {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    .nav-links > :not(#hamburger) {
+        display: none;
+    }
+
+    .nav-links > #hamburger {
+        display: block;
+    }
+}

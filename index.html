@@ -2,10 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <style>
+        @font-face {
+            font-family: 'Calibre';
+            src: url(./styles/Calibre-Black.otf);
+        }
+        body {
+            background-color: #1f1b19;
+            font-family: 'Calibre';
+            color: #F2F2F2;
+        }
+    </style>
+
     <head>
         <title>My Portfolio</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./images/avatar_smile.png" type="image/png">
+        <link href="./styles/header.css" rel="stylesheet">
         <link href="./styles/styles.css" rel="stylesheet">
     </head>
 
@@ -23,6 +37,21 @@
                 <li id="hamburger"><button>Ham</button></li>
             </nav>
         </header>
+
+        <section class="introduction">
+            <div class="intro-content">
+                <h3>Hey, my name is</h3>
+                <h1>Nathan Watkins</h1>
+                <h3>
+                    A second year Computer Science student with a passion for
+                    software development and a love for creating innovative solutions.
+                </h3>
+            </div>
+            
+            <div class="intro-image">
+                <img class="avatar" src="./images/avatar_wave.png" />
+            </div>
+        </section>
 
     </body>
 </html>
