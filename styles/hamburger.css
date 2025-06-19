@@ -1,0 +1,31 @@
+.hamburger-menu {
+    padding: 20px 40px;
+}
+.hamburger-menu ul {
+    list-style: none;
+    padding: 0;
+}
+.hamburger-menu li {
+    margin: 10px 0;
+}
+.hamburger-menu a {
+    text-decoration: none;
+    color: #F2F2F2;
+    font-size: 1.2em;
+}
+
+#hamburgerButton img {
+    width: 30px;
+    height: 30px;
+}
+
+#hamburgerButton button {
+    all: unset;
+}
+
+#hamburgerButton img {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+    margin: 0 auto;
+}

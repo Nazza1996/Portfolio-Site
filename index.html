@@ -23,22 +23,30 @@
         <link href="./styles/styles.css" rel="stylesheet">
         <link href="./styles/footer.css" rel="stylesheet">
         <link href="./styles/experience.css" rel="stylesheet">
+        <link href="./styles/hamburger.css" rel="stylesheet">
     </head>
 
     <body>
 
         <header>
             <div class="header-content">
-                <a href="#">Nathan Watkins</a>
+                <a href="#" class="hamburger-link">Nathan Watkins</a>
             </div>
 
             <nav class="nav-links"> 
                 <li id="homeButton"><a href="#">Home</a></li>
                 <li id="projectsButton"><a href="#projects">Projects</a></li>
                 <li id="contactButton"><a href="#contact">Contact</a></li>
-                <li id="hamburger"><button>Ham</button></li>
+                <li id="hamburgerButton"><button><img src="/images/hamburger.png" /></button></li>
             </nav>
         </header>
+
+        <section class="hamburger-menu" style="display: none;">
+            <ul>
+                <li><a href="#projects" class="hamburger-link">Projects</a></li>
+                <li><a href="#contact" class="hamburger-link">Contact</a></li>
+            </ul>
+        </section>
 
         <section class="introduction">
             <div class="intro-content">
@@ -85,6 +93,39 @@
                 <a href="https://www.linkedin.com/in/nathan-watkins-8401552b4/" target="_blank"><img src="./images/linkedin.png" title="LinkedIn" /></a>
             </div>
         </footer>
+
+        <script>
+            const hamburgerButton = document.getElementById('hamburgerButton');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const footer = document.querySelector('footer');
+
+            hamburgerButton.addEventListener('click', () => {
+                if (hamburgerMenu.style.display === 'none') {
+                    document.querySelectorAll('section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    footer.style.display = 'none';
+                    hamburgerMenu.style.display = '';
+                } else {
+                    document.querySelectorAll('section').forEach(section => {
+                        section.style.display = '';
+                    });
+                    footer.style.display = '';
+                    hamburgerMenu.style.display = 'none';
+                }
+            });
+
+            document.querySelectorAll('.hamburger-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    document.querySelectorAll('section').forEach(section => {
+                        section.style.display = '';
+                    });
+                    footer.style.display = '';
+                    hamburgerMenu.style.display = 'none';
+                });
+            });
+            
+        </script>
 
     </body>
 </html>
