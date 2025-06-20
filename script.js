@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hamburgerButton.addEventListener('click', () => {
         hamburgerMenu.style.display = hamburgerMenu.style.display === 'block' ? 'none' : 'block';
-    })
+    });
 
     document.querySelectorAll('.hamburger-link').forEach(link => {
         link.addEventListener('click', () => {
@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     screen.orientation.addEventListener('change', () => {
         hamburgerMenu.style.display = 'none';
-    })
-
+    });
 });
 
 async function switchPage() {
@@ -36,6 +35,15 @@ async function switchPage() {
         const md = await res.text();
         const html = marked.parse(md);
         document.getElementById('section-container').innerHTML = DOMPurify.sanitize(html);
+
+        if (hash === 'projects') {
+            document.querySelectorAll('.project-item').forEach(item => {
+                item.querySelector('img').onerror = () => {
+                    item.style.display = 'none'
+                    console.warn(`Could not load image for ${item.querySelector('.title').textContent}. Project has been hidden.`)
+                };
+            });
+        }
     }
 
 }
