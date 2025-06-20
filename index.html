@@ -94,21 +94,6 @@
             </div>
         </footer>
 
-        <script>
-            const hamburgerButton = document.getElementById('hamburgerButton');
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const footer = document.querySelector('footer');
-
-            hamburgerButton.addEventListener('click', () => {
-                hamburgerMenu.style.display = hamburgerMenu.style.display === 'block' ? 'none' : 'block';
-            });
-
-            document.querySelectorAll('.hamburger-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburgerMenu.style.display = 'none';
-                });
-            });
-        </script>
-
+        <script src="/script.js"></script>
     </body>
 </html>
