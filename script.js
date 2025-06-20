@@ -28,16 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-function switchPage() {
-    const hash = window.location.hash || '#home';
-    const allSections = document.querySelectorAll('section');
+async function switchPage() {
+    const hash = window.location.hash.replace('#', '') || 'home';
+    const res = await fetch(`sections/${hash}.md`);
 
-    allSections.forEach(section => {
-        section.classList.remove('active');
-    });
-
-    const target = document.querySelector(hash);
-    if (target) {
-        target.classList.add('active');
+    if (res.ok) {
+        const md = await res.text();
+        const html = marked.parse(md);
+        document.getElementById('section-container').innerHTML = DOMPurify.sanitize(html);
     }
+
 }
