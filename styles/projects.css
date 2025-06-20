@@ -169,11 +169,14 @@
 
 .modal-content .bottom > .tags > span {
     background-color: #444;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 50px;
-    font-size: 14px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .modal-content .bottom > .tags .tag-icon {
     margin-right: 10px;
+    font-size: 25px;
 }
