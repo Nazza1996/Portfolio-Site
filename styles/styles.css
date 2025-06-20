@@ -29,6 +29,7 @@
 
 .intro-image-small {
     display: none;
+    float: right;
 }
 
 .intro-image-small .avatar {

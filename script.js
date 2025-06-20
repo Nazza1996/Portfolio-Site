@@ -16,12 +16,26 @@ document.addEventListener('DOMContentLoaded', () => {
             hamburgerMenu.style.display = 'none';
         });
     });
-})
+
+    switchPage();
+    window.addEventListener('hashchange', switchPage)
+
+});
 
 function hamburgerLink() {
     hamburgerMenu.style.display = 'none';
 }
 
-function switchPage(e) {
-    console.log(e.target);
+function switchPage() {
+    const hash = window.location.hash || '#home';
+    const allSections = document.querySelectorAll('section');
+
+    allSections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    const target = document.querySelector(hash);
+    if (target) {
+        target.classList.add('active');
+    }
 }
