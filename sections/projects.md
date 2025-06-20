@@ -1,19 +1,23 @@
 <section id="projects">
     <h1>Projects</h1>
-    <div class="projects-container">
-        <div class="project-item">
-            <div class="card"><img src="/images/projects/ScreenDiary.png" /></div>
-            <div class="project-item-details">
-                <div class="title">Screen Diary</div>
-                <div class="description">A screen time app for Windows</div>
+    <div class="projects-container"></div>
+  </div>
+  <div id="projectModal">
+    <div class="modal-content">
+        <div class="top">
+            <img draggable="false" />
+            <div class="details">
+                <div class="title"></div>
+                <div class="short-description"></div>
             </div>
         </div>
-        <div class="project-item">
-            <div class="card"><img src="/images/projects/GamesToKeep.jpg" /></div>
-            <div class="project-item-details">
-                <div class="title">Games To Keep</div>
-                <div class="description">A free games tracking website</div>
-            </div>
+        <div class="middle">
+            <div class="middle-title">Description</div>
+            <div class="long-description"></div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-title">Tech Stack</div>
+            <div class="tags"></div>
         </div>
     </div>
   </div>

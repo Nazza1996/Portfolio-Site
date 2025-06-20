@@ -1,0 +1,52 @@
+[
+    {
+        "image": "/images/projects/ScreenDiary.png",
+        "title": "Screen Diary",
+        "shortDescription": "A screen time app for Windows",
+        "longDescription": "A Screen Time app for Windows 11",
+        "link": "https://example.com/project-one",
+        "techStack": {
+            "Js" : {
+                "css": "square-js",
+                "name": "JavaScript"
+            },
+            "Html": {
+                "css": "html5",
+                "name": "HTML"
+            },
+            "Css": {
+                "css": "css3-alt",
+                "name": "CSS"
+            },
+            "Node": {
+                "css": "node-js",
+                "name": "NodeJS"
+            }
+        }
+    },
+    {
+        "image": "/images/projects/GamesToKeep.jpg",
+        "title": "Games To Keep",
+        "shortDescription": "A free games tracking website",
+        "longDescription": "A free games tracking website",
+        "link": "https://example.com/project-two",
+        "techStack": {
+            "Js" : {
+                "css": "square-js",
+                "name": "JavaScript"
+            },
+            "Html": {
+                "css": "html5",
+                "name": "HTML"
+            },
+            "Css": {
+                "css": "css3-alt",
+                "name": "CSS"
+            },
+            "Php": {
+                "css": "php",
+                "name": "PHP"
+            }
+        }
+    }
+]

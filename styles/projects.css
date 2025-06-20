@@ -32,12 +32,13 @@
     height: auto;
     border-radius: 10%;
     padding: 10%;
+    cursor: pointer;
 }
 
 .card img {
     width: 100%;
     height: auto;
-    border-radius: 10%;;
+    border-radius: 10%;
 }
 
 .project-item-details {
@@ -69,4 +70,110 @@
     }
 
 
+}
+
+/* Modal styles */
+
+#projectModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#projectModal.show {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#projectModal .modal-content {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    width: 90%;
+}
+
+@media (max-width: 500px) {
+    #projectModal .modal-content {
+        width: 80%;
+    }
+}
+
+/* Modal top */
+
+.modal-content .top {
+    display: flex;
+    gap: 50px;
+}
+
+.modal-content .top > img {
+    width: 20%;
+    height: auto;
+    border-radius: 10%;
+}
+
+.modal-content .top .title {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .modal-content .top > img {
+        display: none;
+    }
+}
+
+
+/* Modal middle */
+.modal-content .middle {
+    background-color: #353535;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-content .middle > .middle-title{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+/* Modal bottom */
+.modal-content .bottom {
+    margin-top: 20px;
+}
+
+.modal-content .bottom > .bottom-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.modal-content .bottom > .tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.modal-content .bottom > .tags > span {
+    background-color: #444;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+.modal-content .bottom > .tags .tag-icon {
+    margin-right: 10px;
 }
