@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburgerMenu = document.querySelector('.hamburger-menu');
     footer = document.querySelector('footer');
 
+    hamburgerMenu.style.display = 'none';
+
     hamburgerButton.addEventListener('click', () => {
         hamburgerMenu.style.display = hamburgerMenu.style.display === 'block' ? 'none' : 'block';
     })
@@ -17,14 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    switchPage();
     window.addEventListener('hashchange', switchPage)
+    switchPage();
+
+    screen.orientation.addEventListener('change', () => {
+        hamburgerMenu.style.display = 'none';
+    })
 
 });
-
-function hamburgerLink() {
-    hamburgerMenu.style.display = 'none';
-}
 
 function switchPage() {
     const hash = window.location.hash || '#home';

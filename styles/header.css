@@ -29,17 +29,3 @@ header {
         display: none;
     }
 }
-
-.nav-links > #hamburgerButton {
-    display: none;
-}
-
-@media (max-width: 450px) {
-    .nav-links > :not(#hamburgerButton) {
-        display: none;
-    }
-
-    .nav-links > #hamburgerButton {
-        display: block;
-    }
-}
