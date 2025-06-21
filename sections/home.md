@@ -17,8 +17,8 @@
     </div>
     <div class="socials">
         <a href="mailto:nathan.wtkns+portfolio@gmail.com" title="Email"><span id="socials-email">Email</span></a>
-        <a class="fab fa-github" title="GitHub" href="https://github.com/Nazza1996"></a>
-        <a class="fab fa-linkedin" title="LinkedIn" href="https://www.linkedin.com/in/nathan-watkins-8401552b4"></a>
+        <a class="fab fa-github" title="GitHub" href="https://github.com/Nazza1996" target="_blank" rel="noopener noreferrer"></a>
+        <a class="fab fa-linkedin" title="LinkedIn" href="https://www.linkedin.com/in/nathan-watkins-8401552b4" target="_blank" rel="noopener noreferrer"></a>
     </div>
     <div class="about-me">
         <h1>About Me</h1>

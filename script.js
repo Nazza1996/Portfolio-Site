@@ -51,7 +51,7 @@ async function switchPage() {
     if (res.ok) {
         const md = await res.text();
         const html = marked.parse(md);
-        document.getElementById('section-container').innerHTML = DOMPurify.sanitize(html);
+        document.getElementById('section-container').innerHTML = sanitizeHtml(html);
 
         if (hash === 'home') {
             await loadHomePage();
@@ -59,6 +59,21 @@ async function switchPage() {
             await loadProjectsPage();
         }
     }
+}
+
+function sanitizeHtml(html) {
+    return DOMPurify.sanitize(html, {
+        ALLOWED_TAGS: [
+            'a', 'abbr', 'b', 'br', 'blockquote', 'code', 'div', 'em', 'i', 'img', 'li',
+            'ol', 'p', 'pre', 'span', 'strong', 'ul', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
+            'table', 'thead', 'tbody', 'tr', 'th', 'td', 'button', 'section', 'article'
+        ],
+        ALLOWED_ATTR: [
+            'href', 'src', 'alt', 'title', 'class', 'id', 'name', 'style', 'target', 'rel',
+            'width', 'height', 'type', 'value', 'aria-label', 'aria-hidden', 'role', 'data-*'
+        ],
+        ALLOW_DATA_ATTR: true,
+    });
 }
 
 async function loadHomePage() {
