@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerMenu.style.display = hamburgerMenu.style.display === 'block' ? 'none' : 'block';
         if (hamburgerMenu.style.display === 'block') {
             document.body.style.overflow = 'hidden';
+            scrollToTop();
         } else {
             document.body.style.overflow = '';
         }
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.hamburger-link').forEach(link => {
         link.addEventListener('click', () => {
+            document.body.style.overflow = '';
             hamburgerMenu.style.display = 'none';
         });
     });
@@ -32,9 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function scrollToTop() {
+function scrollToTop(smooth) {
+    if (smooth) {
+        document.documentElement.style.scrollBehavior = 'smooth';
+    }
+    
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+    document.documentElement.style.scrollBehavior = '';
 }
 
 async function switchPage() {

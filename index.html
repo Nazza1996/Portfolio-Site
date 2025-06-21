@@ -2,9 +2,6 @@
 <html lang="en">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
         body {
             background-color: #181614;
             font-family: 'Calibre';
@@ -34,8 +31,7 @@
                 <nav class="nav-links"> 
                     <li id="homeButton"><a href="#">Home</a></li>
                     <li id="projectsButton"><a href="#projects">Projects</a></li>
-                    <li id="contactButton"><a href="#contact">Contact</a></li>
-                    <li id="hamburgerButton"><button><img src="/images/hamburger.png" /></button></li>
+                    <li id="hamburgerButton"><button><span class="fa-solid fa-bars"></span></button></li>
                 </nav>
             </div>
         </header>
@@ -50,7 +46,7 @@
         <div id="section-container"></div>
 
         <footer>
-            <button onclick="scrollToTop()">Nathan Watkins</button>
+            <button onclick="scrollToTop(true)">Nathan Watkins</button>
             <div class="footer-links">
                 <a href="https://github.com/Nazza1996" target="_blank"><img src="./images/github.png" title="GitHub" /></a>
                 <a href="https://www.linkedin.com/in/nathan-watkins-8401552b4/" target="_blank"><img src="./images/linkedin.png" title="LinkedIn" /></a>

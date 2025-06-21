@@ -26,6 +26,7 @@
 
 #hamburgerButton button {
     all: unset;
+    cursor: pointer;
 }
 
 #hamburgerButton img {
