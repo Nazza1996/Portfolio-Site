@@ -3,11 +3,6 @@ var hamburgerMenu;
 var footer;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const stylesLink = document.createElement('link');
-    stylesLink.rel = "stylesheet";
-    stylesLink.href = "./styles/main.css?v=" + Date.now();
-    document.head.appendChild(stylesLink);
-
     hamburgerButton = document.getElementById('hamburgerButton');
     hamburgerMenu = document.querySelector('.hamburger-menu');
     footer = document.querySelector('footer');
