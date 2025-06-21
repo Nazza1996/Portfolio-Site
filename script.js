@@ -62,6 +62,7 @@ async function switchPage() {
 }
 
 async function loadHomePage() {
+    document.title = "Nathan Watkins";
     let experienceData = [];
     await fetch('/experience.json')
         .then(response => response.json())
@@ -95,6 +96,7 @@ function createExperienceItem(experience) {
 }
 
 async function loadProjectsPage() {
+    document.title = "Projects - Nathan Watkins";
     let projectsData = [];
     await fetch('/projects.json')
         .then(response => response.json())
