@@ -113,11 +113,7 @@ async function loadProjectsPage() {
 
     const projectModal = document.querySelector('#projectModal');
     projectModal.addEventListener('click', () => {
-        projectModal.classList.remove('show');
-        setTimeout(() => {
-            projectModal.style.display = 'none';
-            projectModal.querySelector('.bottom .tags').innerHTML = '';
-        }, 300);
+        closeProjectModal();
     });
 }
 
@@ -167,9 +163,21 @@ function renderProjectModal({ image, title, shortDescription, longDescription, l
   tags.innerHTML = tagsHTML;
 
   projectModal.style.display = 'flex';
+  scrollToTop();
   requestAnimationFrame(() => {
+    document.documentElement.style.overflowY = 'hidden';
     projectModal.classList.add('show');
   });
 
   modalContent.addEventListener('click', (event) => event.stopPropagation());
+  modalContent.querySelector('.back-button button').addEventListener('click', () => closeProjectModal());
+}
+
+function closeProjectModal() {
+    projectModal.classList.remove('show');
+    setTimeout(() => {
+        document.documentElement.style.overflowY = 'auto';
+        projectModal.style.display = 'none';
+        projectModal.querySelector('.bottom .tags').innerHTML = '';
+    }, 300);
 }
