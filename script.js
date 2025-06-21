@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hamburgerButton.addEventListener('click', () => {
         hamburgerMenu.style.display = hamburgerMenu.style.display === 'block' ? 'none' : 'block';
+        if (hamburgerMenu.style.display === 'block') {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
     });
 
     document.querySelectorAll('.hamburger-link').forEach(link => {
