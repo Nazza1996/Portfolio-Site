@@ -1,0 +1,101 @@
+.introduction {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.introduction h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    padding-right: 75px;
+}
+
+.introduction h1 {
+    font-size: 4em;
+    margin: 0px 0px 20px 0px;
+}
+
+.intro-image-big {
+    margin: auto 0;
+}
+
+.intro-image-big .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+.intro-image-small {
+    display: none;
+    float: right;
+}
+
+.intro-image-small .avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+}
+
+@media (max-width: 650px) {
+    .intro-image-big {
+        display: none;
+    }
+
+    .intro-image-small {
+        display: block;
+        margin: auto 0;
+    }
+}
+
+
+/* About Me Section */
+.about-me {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+.about-me p {
+    font-size: 20px;
+}
+
+
+/* Experience Section */
+.experience {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+}
+.experience-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.experience-date {
+    margin: auto 0;
+    text-align: center;
+    padding-right: 20px;
+}
+.experience-box {
+    border-radius: 10px;
+    border: #53504c solid 1px;
+    width: 100%;
+    padding: 20px;
+}
+.experience-box h2 {
+    margin: 0;
+}
+.experience-box h3 {
+    margin: 0;
+}
+.experience-box p {
+    margin: 20px 0 0 0;
+}
