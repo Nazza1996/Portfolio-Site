@@ -15,6 +15,11 @@
             <img class="avatar" src="./images/avatar_wave.png" />
         </div>
     </div>
+    <div class="socials">
+        <a href="mailto:nathan.wtkns+portfolio@gmail.com" title="Email"><span id="socials-email">Email</span></a>
+        <a class="fab fa-github" title="GitHub" href="https://github.com/Nazza1996"></a>
+        <a class="fab fa-linkedin" title="LinkedIn" href="https://www.linkedin.com/in/nathan-watkins-8401552b4"></a>
+    </div>
     <div class="about-me">
         <h1>About Me</h1>
         <p>

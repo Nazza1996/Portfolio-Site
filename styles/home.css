@@ -1,7 +1,7 @@
 .introduction {
     max-width: 900px;
     margin: 0 auto;
-    padding: 50px 20px;
+    padding: 50px 20px 35px 20px;
     display: flex;
     justify-content: space-between;
 }
@@ -47,6 +47,33 @@
         display: block;
         margin: auto 0;
     }
+}
+
+/* Social Links */
+.socials {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+}
+
+.socials #socials-email {
+    background-color: #53504c;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.socials a.fab {
+    font-size: 40px;
 }
 
 
