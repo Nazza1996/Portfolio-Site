@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function scrollToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
 async function switchPage() {
     const hash = window.location.hash.replace('#', '') || 'home';
     const res = await fetch(`sections/${hash}.md`);
