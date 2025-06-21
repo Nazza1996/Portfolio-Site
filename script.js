@@ -36,10 +36,45 @@ async function switchPage() {
         const html = marked.parse(md);
         document.getElementById('section-container').innerHTML = DOMPurify.sanitize(html);
 
-        if (hash === 'projects') {
+        if (hash === 'home') {
+            await loadHomePage();
+        } else if (hash === 'projects') {
             await loadProjectsPage();
         }
     }
+}
+
+async function loadHomePage() {
+    let experienceData = [];
+    await fetch('/experience.json')
+        .then(response => response.json())
+        .then(data => {
+            experienceData = data;
+        })
+        .catch(error => console.error('Error loading experience: ', error));
+
+    const experienceContainer = document.querySelector('.experience-container');
+    experienceData.forEach(experience => {
+        const item = createExperienceItem(experience);
+        experienceContainer.append(item);
+    });
+}
+
+function createExperienceItem(experience) {
+    const div = document.createElement('div');
+    div.classList.add('experience-item');
+
+    div.innerHTML = `
+        <div class="experience-date">
+            <p>${experience.startDate} - ${experience.endDate}</p>
+        </div>
+        <div class="experience-box">
+            <h2>${experience.position}</h2>
+            <h3>${experience.company}</h3>
+            <p>${experience.description}</p>
+        </div>
+    `;
+    return div;
 }
 
 async function loadProjectsPage() {
@@ -52,8 +87,8 @@ async function loadProjectsPage() {
         .catch(error => console.error('Error loading projects: ', error));
 
     const projectsContainer = document.querySelector('.projects-container');
-    projectsData.forEach((project, index) => {
-        const projectItem = createProjectItem(project, index);
+    projectsData.forEach(project => {
+        const projectItem = createProjectItem(project);
         projectsContainer.appendChild(projectItem);
     });
 
@@ -67,7 +102,7 @@ async function loadProjectsPage() {
     });
 }
 
-function createProjectItem(project, index) {
+function createProjectItem(project) {
     const div = document.createElement('div');
     div.classList.add('project-item');
 

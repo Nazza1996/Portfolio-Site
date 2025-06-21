@@ -17,17 +17,6 @@
     </div>
     <div class="experience">
         <h1>Experience</h1>
-        <div class="experience-container">
-            <div class="experience-item">
-                <div class="experience-date">
-                    <p>May 2025 - Present</p>
-                </div>
-                <div class="experience-box">
-                    <h2>Intern Software Engineer</h2>
-                    <h3>EventMAP</h3>
-                    <p>At EventMAP, I work as an Intern Software Engineer on real-world software. My responsibilities include building new features, improving existing functionality, and fixing bugs across the codebase. I collaborate with other developers using tools like Jira and Git, contributing to both front-end and back-end tasks. I’ve also handled support tickets, gaining experience in debugging live systems and writing clean, maintainable code for production environments.</p>
-                </div>
-            </div>
-        </div>
+        <div class="experience-container"></div>
     </div>
 </section>
