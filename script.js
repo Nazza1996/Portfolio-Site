@@ -62,7 +62,7 @@ async function loadProjectsPage() {
         projectModal.classList.remove('show');
         setTimeout(() => {
             projectModal.style.display = 'none';
-            tags.innerHTML = '';
+            projectModal.querySelector('.bottom .tags').innerHTML = '';
         }, 300);
     });
 }
@@ -83,19 +83,29 @@ function createProjectItem(project, index) {
     return div;
 }
 
-function renderProjectModal({ image, title, shortDescription, longDescription, techStack }) {
+function renderProjectModal({ image, title, shortDescription, longDescription, links, techStack }) {
   const projectModal = document.querySelector('#projectModal');
   const modalContent = projectModal.querySelector('.modal-content');
-  const tags = projectModal.querySelector('.tags');
+  const linksContainer = projectModal.querySelector('.top .tags');
+  const tags = projectModal.querySelector('.bottom .tags');
 
   projectModal.querySelector('.top img').src = image || '';
   projectModal.querySelector('.title').textContent = title || 'Untitled';
   projectModal.querySelector('.short-description').textContent = shortDescription;
   projectModal.querySelector('.long-description').textContent = longDescription;
 
+  let linksHTML = "";
+  for (const i in links) {
+    var link = links[i];
+    linksHTML += `
+        <a href="${link.url}" target="_blank" class="${link.css} tag-icon" title="${link.name}"><span>${link.name}</span></a>
+    `;
+  }
+  linksContainer.innerHTML = linksHTML;
+
   let tagsHTML = "";
   for (const i in techStack) {
-    var tech = techStack[i]
+    var tech = techStack[i];
     tagsHTML += `
         <span><i class="fab fa-${tech.css} tag-icon"></i>${tech.name}</span>
     `;

@@ -9,6 +9,7 @@
             <div class="details">
                 <div class="title"></div>
                 <div class="short-description"></div>
+                <div class="tags"></div>
             </div>
         </div>
         <div class="middle">

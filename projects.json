@@ -1,10 +1,47 @@
 [
     {
+        "image": "/images/projects/GamesToKeep.jpg",
+        "title": "Games to Keep",
+        "shortDescription": "Games to Keep helps you find and keep track of free games from multiple sites, all in one place.",
+        "longDescription": "Games to Keep is a website that lists free games from a range of sources like Epic Games, Steam, and more. It collects and displays active giveaways, so users can easily see what's available without checking every site individually.",
+        "links": {
+            "website": {
+                "url": "https://www.gamestokeep.com",
+                "name": "gamestokeep.com",
+                "css": "fa-solid fa-up-right-from-square"
+            }
+        },
+        "techStack": {
+            "Js" : {
+                "css": "square-js",
+                "name": "JavaScript"
+            },
+            "Html": {
+                "css": "html5",
+                "name": "HTML"
+            },
+            "Css": {
+                "css": "css3-alt",
+                "name": "CSS"
+            },
+            "Php": {
+                "css": "php",
+                "name": "PHP"
+            }
+        }
+    },
+    {
         "image": "/images/projects/ScreenDiary.png",
         "title": "Screen Diary",
-        "shortDescription": "A screen time app for Windows",
-        "longDescription": "A Screen Time app for Windows 11",
-        "link": "https://example.com/project-one",
+        "shortDescription": "A Windows app that tracks how long your screen is active",
+        "longDescription": "Screen Diary is a simple screen time tracker for Windows. It runs in the background and records how long your screen is on. It's lightweight, doesn't use a database, and avoids creating extra processes — just a clean way to keep track of your daily screen usage.",
+        "links": {
+            "github": {
+                "url": "https://github.com/Nazza1996/Screen-Diary",
+                "name": "GitHub",
+                "css": "fab fa-github"
+            }
+        },
         "techStack": {
             "Js" : {
                 "css": "square-js",
@@ -25,27 +62,21 @@
         }
     },
     {
-        "image": "/images/projects/GamesToKeep.jpg",
-        "title": "Games To Keep",
-        "shortDescription": "A free games tracking website",
-        "longDescription": "A free games tracking website",
-        "link": "https://example.com/project-two",
+        "image": "/images/projects/ewb.png",
+        "title": "EWB 2025",
+        "shortDescription": "Engineers Without Borders South Africa 2025",
+        "longDescription": "Developed by a team of second year Computer Science students, this project showcases practical software engineering skills while addressing a genuine social and environmental problem. This game is a turn-based multiplayer board game designed to tackle the real-world issue of potholes in Makers Valley, South Africa. By combining strategic gameplay with educational elements, the game encourages players to think critically about resource management, community impact, and sustainable solutions.",
+        "links": {
+            "website": {
+                "url": "https://github.com/Xelodico/engineers-without-borders",
+                "name": "GitHub",
+                "css": "fab fa-github"
+            }
+        },
         "techStack": {
-            "Js" : {
-                "css": "square-js",
-                "name": "JavaScript"
-            },
-            "Html": {
-                "css": "html5",
-                "name": "HTML"
-            },
-            "Css": {
-                "css": "css3-alt",
-                "name": "CSS"
-            },
-            "Php": {
-                "css": "php",
-                "name": "PHP"
+            "Java" : {
+                "css": "java",
+                "name": "Java"
             }
         }
     }
