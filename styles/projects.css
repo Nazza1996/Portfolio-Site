@@ -82,6 +82,7 @@
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 
     opacity: 0;
     pointer-events: none;
@@ -102,9 +103,44 @@
     width: 90%;
 }
 
+.modal-content .back-button {
+    display: none;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+
+.modal-content .back-button button {
+    background: none;
+    border: none;
+    color: #f2f2f2;
+    font-size: 20px;
+    align-items: center;
+}
+
+.modal-content .back-button button span {
+    font-family: 'Calibre';
+    margin-left: 10px;
+}
+
 @media (max-width: 500px) {
     #projectModal .modal-content {
         width: 80%;
+    }
+
+    .modal-content .back-button {
+        display: flex;
+    }
+}
+
+@media (max-height: 800px) {
+    #projectModal .modal-content {
+        height: 80%;
+        overflow-y: scroll;
+    }
+
+    .modal-content .back-button {
+        display: flex;
     }
 }
 

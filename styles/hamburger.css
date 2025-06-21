@@ -4,7 +4,7 @@
     position: absolute;
     width: 70%;
     height: 100%;
-    z-index: 900;
+    z-index: 800;
 }
 .hamburger-menu ul {
     list-style: none;

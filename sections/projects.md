@@ -4,6 +4,9 @@
   </div>
   <div id="projectModal">
     <div class="modal-content">
+        <div class="back-button">
+            <button class="fa-solid fa-arrow-left"><span>Back to projects</span></button>
+        </div>
         <div class="top">
             <img draggable="false" />
             <div class="details">
