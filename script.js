@@ -1,11 +1,14 @@
-var hamburgerButton;
-var hamburgerMenu;
-var footer;
+function createElement(tag, className, textContent) {
+    const element = document.createElement(tag);
+    element.className = className;
+    element.textContent = textContent;
+    return element;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-    hamburgerButton = document.getElementById('hamburgerButton');
-    hamburgerMenu = document.querySelector('.hamburger-menu');
-    footer = document.querySelector('footer');
+    var hamburgerButton = document.getElementById('hamburgerButton');
+    var hamburgerMenu = document.querySelector('.hamburger-menu');
+    var footerHomeButton = document.getElementById('footerHomeButton');
 
     hamburgerMenu.style.display = 'none';
 
@@ -24,6 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
             hamburgerMenu.style.display = 'none';
         });
+    });
+
+    footerHomeButton.addEventListener('click', () => {
+        if (['', '#', '#home'].includes(window.location.hash)) {
+            scrollToTop(true);
+        } else {
+            window.location.hash = '#home';
+        }
     });
 
     window.addEventListener('hashchange', switchPage)
@@ -91,6 +102,19 @@ async function loadHomePage() {
         const item = createExperienceItem(experience);
         experienceContainer.append(item);
     });
+
+    let qualificationData = [];
+    await fetch('/qualifications.json')
+        .then(response => response.json())
+        .then(data => {
+            qualificationData = data;
+        })
+        .catch(error => console.error('Error loading qualifications: ', error));
+    const qualificationsContainer = document.querySelector('.qualification-container');
+    qualificationData.forEach(qualification => {
+        const item = createQualificationItem(qualification);
+        qualificationsContainer.append(item);
+    });
 }
 
 function createExperienceItem(experience) {
@@ -107,6 +131,40 @@ function createExperienceItem(experience) {
             <p>${experience.description}</p>
         </div>
     `;
+    return div;
+}
+
+function createQualificationItem(item) {
+    const div = document.createElement('div');
+    div.classList.add('experience-item');
+
+    let levelsContainer;
+    if (item.levels) {
+        levelsContainer = document.createElement('div');
+        item.levels.forEach(level => {
+            const levelNumber = createElement('p', '', `Level ${level.level} Modules:`);
+            levelsContainer.appendChild(levelNumber);
+
+            level.modules.forEach(module => {
+                const moduleContent = createElement('div', '', `${module.name} (${module.grade})`);
+                levelsContainer.appendChild(moduleContent);
+            });
+        });
+    }
+
+    const date = createElement('div', 'experience-date');
+    const dateContent = createElement('p', '', `${item.startDate} - ${item.endDate}`);
+    date.appendChild(dateContent);
+
+    const box = createElement('div', 'experience-box');
+    const qualification = createElement('h2', '', item.qualification);
+    const institution = createElement('h3', '', item.institution);
+    box.appendChild(qualification);
+    box.appendChild(institution);
+    box.append(levelsContainer);
+
+    div.appendChild(date);
+    div.appendChild(box);
     return div;
 }
 

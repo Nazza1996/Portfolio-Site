@@ -1,7 +1,7 @@
 header {
     position: fixed;
     left: 0;
-    top: 20px;
+    top: 0px;
     width: 100%;
     background-color: #181614;
     z-index: 900;
@@ -18,7 +18,7 @@ body {
     align-items: center;
     margin: 0 auto;
     font-size: 20px;
-    padding: 10px 20px;
+    padding: 30px 20px;
 }
 
 .header-content, .header-content a {

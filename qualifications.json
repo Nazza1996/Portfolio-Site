@@ -1,0 +1,31 @@
+[
+    {
+        "institution": "Queen's University Belfast",
+        "qualification": "MEng Computer Science",
+        "startDate": "Sep 2023",
+        "endDate": "Jun 2028",
+        "levels": [
+            {
+                "level": 2,
+                "modules": [
+                { "name": "- Systems Security and Cryptography", "grade": "62%" },
+                { "name": "- Software Engineering and Systems Development", "grade": "82%" },
+                { "name": "- Data Structures and Algorithms", "grade": "86%" },
+                { "name": "- Theory of Computation", "grade": "70%" },
+                { "name": "- Professional and Transferrable Skills", "grade": "73%" }
+                ]
+            },
+            {
+                "level": 1,
+                "modules": [
+                { "name": "- Procedural Programming", "grade": "86%" },
+                { "name": "- Introduction to Computer Architecture", "grade": "79%" },
+                { "name": "- Object Oriented Programming", "grade": "78%" },
+                { "name": "- Fundamentals of Maths for Computing", "grade": "69%" },
+                { "name": "- Introduction to Cyber Security", "grade": "69%" },
+                { "name": "- Databases", "grade": "66%" }
+                ]
+            }
+        ]
+    }
+]

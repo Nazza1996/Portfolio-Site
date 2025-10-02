@@ -1,6 +1,9 @@
-.introduction {
+#home {
     max-width: 900px;
     margin: 0 auto;
+}
+
+.introduction {
     padding: 50px 20px 35px 20px;
     display: flex;
     justify-content: space-between;
@@ -51,8 +54,7 @@
 
 /* Social Links */
 .socials {
-    max-width: 900px;
-    margin: 0 auto 50px auto;
+    margin-bottom: 50px;
     padding-bottom: 20px;
     display: flex;
     flex-direction: row;
@@ -76,29 +78,24 @@
     font-size: 40px;
 }
 
-
-/* About Me Section */
-.about-me {
-    max-width: 900px;
-    margin: 0 auto;
+#details {
     padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+
+/* About Me Section */
 .about-me p {
     font-size: 20px;
 }
 
 
 /* Experience Section */
-.experience {
-    max-width: 900px;
-    margin: 0 auto;
-    padding-bottom: 50px;
-}
 .experience-container {
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
     gap: 20px;
 }
 .experience-item {
@@ -110,6 +107,7 @@
     margin: auto 0;
     text-align: center;
     padding-right: 20px;
+    max-width: 90px;
 }
 .experience-box {
     border-radius: 10px;
