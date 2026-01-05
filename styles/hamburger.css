@@ -15,21 +15,6 @@
     right: 0;
 }
 
-#hamburger-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 1000;
-}
-
-#hamburger-overlay.open {
-    opacity: 1;
-    pointer-events: all;
-}
-
 .hamburger-menu ul {
     list-style: none;
     padding: 0;

@@ -6,7 +6,7 @@ function createElement(tag, className, textContent) {
 }
 
 const sidePanel = document.querySelector('.hamburger-menu');
-const sidePanelOverlay = document.getElementById('hamburger-overlay');
+const sidePanelOverlay = document.getElementById('overlay');
 var hamburgerButton = document.getElementById('hamburgerButton');
 var footerHomeButton = document.getElementById('footerHomeButton');
 
@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sidePanelOverlay.addEventListener('click', () => {
         toggleSidePanel(false);
+        console.log('Overlay clicked');
+        closeProjectModal();
     });
 
     footerHomeButton.addEventListener('click', () => {
@@ -182,12 +184,6 @@ async function loadProjectsPage() {
         projectsContainer.appendChild(projectItem);
     });
 
-    const projectModal = document.querySelector('#projectModal');
-    projectModal.addEventListener('click', () => {
-        closeProjectModal();
-    });
-
-
     const cards = projectsContainer.querySelectorAll('.card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -227,52 +223,71 @@ function createProjectItem(project) {
 }
 
 function renderProjectModal({ image, title, shortDescription, longDescription, links, techStack }) {
-  const projectModal = document.querySelector('#projectModal');
-  const modalContent = projectModal.querySelector('.modal-content');
-  const linksContainer = projectModal.querySelector('.top .tags');
-  const tags = projectModal.querySelector('.bottom .tags');
+    const projectModal = document.querySelector('#projectModal');
+    const modalContent = projectModal.querySelector('.modal-content');
+    const linksContainer = projectModal.querySelector('.top .tags');
+    const tags = projectModal.querySelector('.bottom .tags');
 
-  projectModal.querySelector('.top img').src = image || '';
-  projectModal.querySelector('.title').textContent = title || 'Untitled';
-  projectModal.querySelector('.short-description').textContent = shortDescription;
-  projectModal.querySelector('.long-description').textContent = longDescription;
+    projectModal.querySelector('.top img').src = image || '';
+    projectModal.querySelector('.title').textContent = title || 'Untitled';
+    projectModal.querySelector('.short-description').textContent = shortDescription;
+    projectModal.querySelector('.long-description').textContent = longDescription;
 
-  let linksHTML = "";
-  for (const i in links) {
-    var link = links[i];
-    linksHTML += `
-        <a href="${link.url}" target="_blank" class="${link.css} tag-icon" title="${link.name}"><span>${link.name}</span></a>
-    `;
-  }
-  linksContainer.innerHTML = linksHTML;
+    let linksHTML = "";
+    for (const i in links) {
+        var link = links[i];
+        linksHTML += `
+            <a href="${link.url}" target="_blank" class="${link.css} tag-icon" title="${link.name}"><span>${link.name}</span></a>
+        `;
+    }
+    linksContainer.innerHTML = linksHTML;
 
-  let tagsHTML = "";
-  for (const i in techStack) {
-    var tech = techStack[i];
-    tagsHTML += `
-        <span><i class="fab fa-${tech.css} tag-icon"></i>${tech.name}</span>
-    `;
-  }
-  tags.innerHTML = tagsHTML;
+    let tagsHTML = "";
+    for (const i in techStack) {
+        var tech = techStack[i];
+        tagsHTML += `
+            <span><i class="fab fa-${tech.css} tag-icon"></i>${tech.name}</span>
+        `;
+    }
+    tags.innerHTML = tagsHTML;
 
-  projectModal.style.display = 'flex';
-  scrollToTop();
-  requestAnimationFrame(() => {
-    document.documentElement.style.overflowY = 'hidden';
-    projectModal.classList.add('show');
-  });
+    projectModal.style.display = 'flex';
+    requestAnimationFrame(() => {
+        document.documentElement.style.overflowY = 'hidden';
+        projectModal.classList.add('show');
+    });
 
-  modalContent.addEventListener('click', (event) => event.stopPropagation());
-  modalContent.querySelector('.back-button button').addEventListener('click', () => closeProjectModal());
+    toggleOverlay(true);
+    modalContent.addEventListener('click', (event) => event.stopPropagation());
+    modalContent.querySelector('.back-button button').addEventListener('click', () => closeProjectModal());
 }
 
 function closeProjectModal() {
+    console.log('Closing modal');
     projectModal.classList.remove('show');
+    toggleOverlay(false);
     setTimeout(() => {
         document.documentElement.style.overflowY = 'auto';
         projectModal.style.display = 'none';
         projectModal.querySelector('.bottom .tags').innerHTML = '';
     }, 300);
+
+}
+
+function toggleOverlay(display, canScroll = false) {
+    if (display === undefined) {
+        display = sidePanelOverlay.classList.contains('open') ? false : true;
+    }
+
+    if (display && display === true) {
+        sidePanelOverlay.classList.add('open');
+        if (!canScroll) {
+            document.body.style.overflow = 'hidden';
+        }
+    } else {
+        sidePanelOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
 }
 
 function toggleSidePanel(shouldOpen) {
@@ -281,15 +296,15 @@ function toggleSidePanel(shouldOpen) {
     }
 
     function open() {
+        if (sidePanel.classList.contains('open')) return;
         sidePanel.classList.add('open');
-        sidePanelOverlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        toggleOverlay(true, false);
     }
 
     function close() {
+        if (!sidePanel.classList.contains('open')) return;
         sidePanel.classList.remove('open');
-        sidePanelOverlay.classList.remove('open');
-        document.body.style.overflow = '';
+        toggleOverlay(false, false);
     }
 
     if (shouldOpen && shouldOpen === true) {
