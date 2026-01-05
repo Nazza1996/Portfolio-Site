@@ -5,28 +5,24 @@ function createElement(tag, className, textContent) {
     return element;
 }
 
+const sidePanel = document.querySelector('.hamburger-menu');
+const sidePanelOverlay = document.getElementById('hamburger-overlay');
+var hamburgerButton = document.getElementById('hamburgerButton');
+var footerHomeButton = document.getElementById('footerHomeButton');
+
 document.addEventListener('DOMContentLoaded', () => {
-    var hamburgerButton = document.getElementById('hamburgerButton');
-    var hamburgerMenu = document.querySelector('.hamburger-menu');
-    var footerHomeButton = document.getElementById('footerHomeButton');
-
-    hamburgerMenu.style.display = 'none';
-
     hamburgerButton.addEventListener('click', () => {
-        hamburgerMenu.style.display = hamburgerMenu.style.display === 'block' ? 'none' : 'block';
-        if (hamburgerMenu.style.display === 'block') {
-            document.body.style.overflow = 'hidden';
-            scrollToTop();
-        } else {
-            document.body.style.overflow = '';
-        }
+        toggleSidePanel();
     });
 
     document.querySelectorAll('.hamburger-link').forEach(link => {
         link.addEventListener('click', () => {
-            document.body.style.overflow = '';
-            hamburgerMenu.style.display = 'none';
+            toggleSidePanel(false);
         });
+    });
+
+    sidePanelOverlay.addEventListener('click', () => {
+        toggleSidePanel(false);
     });
 
     footerHomeButton.addEventListener('click', () => {
@@ -40,8 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('hashchange', switchPage)
     switchPage();
 
-    screen.orientation.addEventListener('change', () => {
-        hamburgerMenu.style.display = 'none';
+    screen.orientation.addEventListener('change', (e) => {
+        if (e.target.type === 'landscape-primary' || e.target.type === 'landscape-secondary') {
+            toggleSidePanel(false);
+        }
     });
 });
 
@@ -275,4 +273,28 @@ function closeProjectModal() {
         projectModal.style.display = 'none';
         projectModal.querySelector('.bottom .tags').innerHTML = '';
     }, 300);
+}
+
+function toggleSidePanel(shouldOpen) {
+    if (shouldOpen === undefined) {
+        shouldOpen = sidePanel.classList.contains('open') ? false : true;
+    }
+
+    function open() {
+        sidePanel.classList.add('open');
+        sidePanelOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+        sidePanel.classList.remove('open');
+        sidePanelOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    if (shouldOpen && shouldOpen === true) {
+        open();
+    } else {
+        close();
+    }
 }

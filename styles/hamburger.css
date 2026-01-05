@@ -1,11 +1,35 @@
 .hamburger-menu {
-    padding: 20px 40px;
-    background-color: #181614;
-    position: absolute;
-    width: 70%;
-    height: 100%;
-    z-index: 800;
+    position: fixed;
+    top: 80px;
+    right: -100vw;
+    width: 70vw;
+    height: 100vh;
+    z-index: 1000;
+    background: #181614;
+    padding: 0px 20px;
+    transition: right 0.3s ease-in-out;
+    border-radius: 20px 0 0 0;
 }
+
+.hamburger-menu.open {
+    right: 0;
+}
+
+#hamburger-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+#hamburger-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
 .hamburger-menu ul {
     list-style: none;
     padding: 0;
