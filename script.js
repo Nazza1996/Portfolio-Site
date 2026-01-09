@@ -5,9 +5,10 @@ function createElement(tag, className, textContent) {
     return element;
 }
 
-const sidePanel = document.querySelector('.hamburger-menu');
-const sidePanelOverlay = document.getElementById('overlay');
+const sidePanel = document.querySelector('.sidepanel');
+const overlay = document.getElementById('overlay');
 var hamburgerButton = document.getElementById('hamburgerButton');
+var headerHomeButton = document.getElementById('headerHomeButton');
 var footerHomeButton = document.getElementById('footerHomeButton');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,15 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleSidePanel();
     });
 
-    document.querySelectorAll('.hamburger-link').forEach(link => {
+    document.querySelectorAll('.sidepanel-link').forEach(link => {
         link.addEventListener('click', () => {
             toggleSidePanel(false);
         });
     });
 
-    sidePanelOverlay.addEventListener('click', () => {
+    overlay.addEventListener('click', () => {
         toggleSidePanel(false);
-        console.log('Overlay clicked');
         closeProjectModal();
     });
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (['', '#', '#home'].includes(window.location.hash)) {
             scrollToTop(true);
         } else {
-            window.location.hash = '#home';
+            window.location.hash = '#';
         }
     });
 
@@ -276,16 +276,16 @@ function closeProjectModal() {
 
 function toggleOverlay(display, canScroll = false) {
     if (display === undefined) {
-        display = sidePanelOverlay.classList.contains('open') ? false : true;
+        display = overlay.classList.contains('open') ? false : true;
     }
 
     if (display && display === true) {
-        sidePanelOverlay.classList.add('open');
+        overlay.classList.add('open');
         if (!canScroll) {
             document.body.style.overflow = 'hidden';
         }
     } else {
-        sidePanelOverlay.classList.remove('open');
+        overlay.classList.remove('open');
         document.body.style.overflow = '';
     }
 }
