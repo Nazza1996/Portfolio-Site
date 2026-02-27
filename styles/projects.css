@@ -16,6 +16,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 30px;
+  padding-top: 30px;
 }
 
 .project-item {
@@ -23,7 +24,6 @@
     flex-direction: column;
     gap: 15px;
     width: 250px;
-    padding: 30px 0;
 }
 
 .card {
