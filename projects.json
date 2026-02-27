@@ -2,7 +2,7 @@
     {
         "image": "/images/projects/GamesToKeep.jpg",
         "title": "Games to Keep",
-        "shortDescription": "Games to Keep helps you find and keep track of free games from multiple sites, all in one place.",
+        "shortDescription": "Games to Keep helps you find and keep track of free games from multiple sites, all in one place",
         "longDescription": "Games to Keep is a website that lists free games from a range of sources like Epic Games, Steam, and more. It collects and displays active giveaways, so users can easily see what's available without checking every site individually.",
         "links": {
             "website": {
@@ -78,6 +78,33 @@
                 "css": "java",
                 "name": "Java"
             }
+        }
+    },
+    {
+        "image": "/images/avatar_smile.png",
+        "title": "Portfolio Website",
+        "shortDescription": "This website!",
+        "longDescription": "I created this website to showcase my qualifications, experience, and projects to the world. Hope you like it!",
+        "links": {
+            "website": {
+                "url": "https://github.com/Nazza1996/Portfolio-Site",
+                "name": "GitHub",
+                "css": "fab fa-github"
+            }
+        },
+        "techStack": {
+            "Js" : {
+                "css": "square-js",
+                "name": "JavaScript"
+            },
+            "Html": {
+                "css": "html5",
+                "name": "HTML"
+            },
+            "Css": {
+                "css": "css3-alt",
+                "name": "CSS"
+            },
         }
     }
 ]
