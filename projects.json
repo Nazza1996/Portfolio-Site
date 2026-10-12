@@ -31,6 +31,41 @@
         }
     },
     {
+        "image": "/images/projects/BookPublishingPlatform.png",
+        "title": "Book Publishing Platform",
+        "shortDescription": "A full-stack book publishing platform.",
+        "longDescription": "A full-stack web application for managing and publishing books, chapters, releases, reader groups, and feedback. It includes a public library and reading experience alongside an authenticated administration dashboard.",
+        "links": {
+            "website": {
+                "url": "https://github.com/Nazza1996/book-publishing-platform",
+                "name": "GitHub",
+                "css": "fab fa-github"
+            }
+        },
+        "techStack": {
+            "Js" : {
+                "css": "square-js",
+                "name": "JavaScript/TypeScript"
+            },
+            "Ts" : {
+                "css": "react",
+                "name": "React"
+            },
+            "Express": {
+                "css": "node-js",
+                "name": "Express"
+            },
+            "Css": {
+                "css": "css3-alt",
+                "name": "CSS"
+            },
+            "Docker": {
+                "css": "docker",
+                "name": "Docker"
+            }
+        }
+    },
+    {
         "image": "/images/projects/ScreenDiary.png",
         "title": "Screen Diary",
         "shortDescription": "A Windows app that tracks how long your screen is active",
